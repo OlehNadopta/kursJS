@@ -1,1 +1,11 @@
-document.querySelectorAll('button')[0].setAttribute('style', 'border: 3px solid blue')
+let a = 15
+let e = 4
+
+// console.log(a+e)
+// console.log(a-e)
+// console.log(a*e)
+// console.log(a/e)
+
+
+
+console.log(--a)
