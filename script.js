@@ -1,21 +1,53 @@
 const auta = [
     {
-        marka: 'Lexus'
-        model: 'IS'
-        przebieg: '10000'
-        cena: '90000'
-        ilosc: '2'
+        marka: 'Lexus',
+        model: 'IS',
+        rok: '2012',  
+        cena: '90000',
+        ilosc: '2',
     },
     {
-        marka: 'Toyota'
-        model: 'Camry'
-        przebieg: '15000'
-        cena: '50000'
-        ilosc: '5'
+        marka: 'Toyota',
+        model: 'Camry',
+        rok: '2015',
+        cena: '50000',
+        ilosc: '5',
+    },
+    {
+        marka: 'Honda',
+        model: 'Civic',
+        rok: '2017',
+        cena: '70000',
+        ilosc: '6',
     }
 ]
 
-console.log(auta)
+const totalPriceCar = auta.reduce(function(prevousValue, curentValue) {
+    return prevousValue + curentValue.ilosc*curentValue.cena
+}, 0)
+
+console.log(totalPriceCar)
+
+// const results = auta.filter(function(e){
+//     return e.rok>2014
+// });
+// console.log(results)
+
+
+// const newPrice = auta.map(function(e) {
+//     return e.cena*1.2
+// });
+
+// console.log(auta)
+// console.log(newPrice)
+
+// auta.forEach(function(e) {if (e.cena>60000) return console.log(e.marka)})
+
+
+//auta.forEach(function(e) {console.log('i')})
+
+//console.log(auta)
+
 
 // const tablica = [1,2,3]
 
