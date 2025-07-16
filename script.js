@@ -1,32 +1,73 @@
-const auta = [
-    {
-        marka: 'Lexus',
-        model: 'IS',
-        rok: '2012',  
-        cena: '90000',
-        ilosc: '2',
+const osoba ={
+    imie: 'Oleh',
+    nazwisko: 'Nadopta',
+    get imieOsoby(){
+        return this.imie;
     },
-    {
-        marka: 'Toyota',
-        model: 'Camry',
-        rok: '2015',
-        cena: '50000',
-        ilosc: '5',
+    set imieOsoby(imieOsoby){
+        this.imie = this.imieOsoby;
     },
-    {
-        marka: 'Honda',
-        model: 'Civic',
-        rok: '2017',
-        cena: '70000',
-        ilosc: '6',
+    get podpis(){
+        return this.imie+' '+this.nazwisko;
     }
-]
+}
+// console.log(osoba.imie)
+// console.log(osoba.imieOsoby)
+// osoba.imie = 'Lesyk'
+// console.log(osoba.imieOsoby)
+console.log(osoba.podpis.toUpperCase())
 
-const totalPriceCar = auta.reduce(function(prevousValue, curentValue) {
-    return prevousValue + curentValue.ilosc*curentValue.cena
-}, 0)
 
-console.log(totalPriceCar)
+// let ofertyPracy = {
+//     nazwa: 'Programista',
+//     wynagrodzenia: 5000,
+//     ogloszenie() {
+//         console.log(`${this.nazwa}`, `${this.wynagrodzenia}`+' zl');
+//     }
+// }
+// ofertyPracy.ogloszenie()
+
+
+// var osoba = {
+//     imie: 'Jan',
+//     nazwisko: 'Kowalski',
+//     wiek: 35,
+//     show: function(){
+//         console.log('Mam na imie '+this.imie+' a na nazwisko '+this.nazwisko+' mam lat '+this.wiek+'');
+//     }
+// }
+
+// osoba.show()
+
+// const auta = [
+//     {
+//         marka: 'Lexus',
+//         model: 'IS',
+//         rok: '2012',  
+//         cena: '90000',
+//         ilosc: '2',
+//     },
+//     {
+//         marka: 'Toyota',
+//         model: 'Camry',
+//         rok: '2015',
+//         cena: '50000',
+//         ilosc: '5',
+//     },
+//     {
+//         marka: 'Honda',
+//         model: 'Civic',
+//         rok: '2017',
+//         cena: '70000',
+//         ilosc: '6',
+//     }
+// ]
+
+// const totalPriceCar = auta.reduce(function(prevousValue, curentValue) {
+//     return prevousValue + curentValue.ilosc*curentValue.cena
+// }, 0)
+
+// console.log(totalPriceCar)
 
 // const results = auta.filter(function(e){
 //     return e.rok>2014
