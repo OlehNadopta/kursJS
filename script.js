@@ -1,21 +1,63 @@
-const osoba ={
-    imie: 'Oleh',
-    nazwisko: 'Nadopta',
-    get imieOsoby(){
-        return this.imie;
-    },
-    set imieOsoby(imieOsoby){
-        this.imie = this.imieOsoby;
-    },
-    get podpis(){
-        return this.imie+' '+this.nazwisko;
-    }
-}
+const liczby = [1,2,3,4,5,6]
+const liczby2 = [8,9,...liczby]
+console.log(liczby2)
+
+// function suma(a,b,c,d,e,f){
+//     return a+b+c+d+e+f
+// }
+// console.log(suma(...liczby))
+// let a = 3;
+// let b = 7;
+
+// ((x,y) => console.log(x+y))(a,b)
+
+// let suma = (x,y) => console.log(x+y)
+
+// suma(a,b)
+
+
+// let a = 3;
+// let b = 7;
+// let suma = 0;
+
+// (function (x,y){
+//     let suma = x+y
+//     return console.log(suma)
+// }(3,5));
+
+// console.log(suma)
+
+
+// let a = 4
+// let b = 8
+
+// function dodawanie (x,y){
+//     let suma = x+y
+//     return suma
+// }
+
+// dodawanie(a,b)
+
+// console.log(dodawanie(a,b))
+
+// const osoba ={
+//     imie: 'Oleh',
+//     nazwisko: 'Nadopta',
+//     get imieOsoby(){
+//         return this.imie;
+//     },
+//     set imieOsoby(imieOsoby){
+//         this.imie = this.imieOsoby;
+//     },
+//     get podpis(){
+//         return this.imie+' '+this.nazwisko;
+//     }
+// }
 // console.log(osoba.imie)
 // console.log(osoba.imieOsoby)
 // osoba.imie = 'Lesyk'
 // console.log(osoba.imieOsoby)
-console.log(osoba.podpis.toUpperCase())
+//console.log(osoba.podpis.toUpperCase())
 
 
 // let ofertyPracy = {
