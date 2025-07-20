@@ -1,6 +1,85 @@
-const liczby = [1,2,3,4,5,6]
-const liczby2 = [8,9,...liczby]
-console.log(liczby2)
+let wybor;
+const pracownicy = new Array()
+
+function Osoba(imie,nazwisko, numer){
+    this.imie = imie
+    this.nazwisko = nazwisko
+    this.numer = parseInt(numer)
+}
+
+// function tworzenie(imie,nazwisko){
+//     let osoba = new Osoba(imie,nazwisko)
+//     pracownicy.push(osoba)
+// }
+
+// function usuwanie(nr){
+//     delete pracownicy[nr]
+// }
+
+
+const metody = {
+    tworzeniaPracownika: function(imie,nazwisko,numer){
+        console.log(this)
+        let osoba = new Osoba(imie,nazwisko,numer)
+        pracownicy.push(osoba)
+    },
+    wyswietlPracownika: function(){
+        document.write('Imię: ' ,this.imie,' nazwisko: ',this.nazwisko)
+    },
+    usuwaniePracownika: function(){
+        delete pracownicy[this.numer-1]
+    }
+}
+
+while(wybor!=0){
+    wybor = prompt('Podaj co chcesz zrobis. (1-tworzenie, 2-usuwanie, 3-wyswietlanie, 4-wyswietl pracownika 0-wyjscie)')
+    switch(wybor){
+    case '1':
+        let imie = prompt('podaj imie')
+        let nazwisko = prompt('podaj nazwisko')
+        let numer = prompt('Podaj numer pracownika')
+        let tworzenie = metody.tworzeniaPracownika.bind(pracownicy)
+        tworzenie(imie,nazwisko,numer)
+        break;
+    case '2':
+        let nrP = prompt('podaj nr indeksu pracownika do usuniecia')
+        metody.usuwaniePracownika.apply(pracownicy[nrP])
+        wybor=0
+        break;
+    case '3':    
+        pracownicy.forEach((e)=>{
+            console.log(e)
+        })
+        break;
+    case '4':
+        let nr = prompt('podaj numer indeksu pracosnika')
+        metody.wyswietlPracownika.call(pracownicy[nr])
+        wybor=0
+        break;
+
+    default:
+        document.write('nie wybrano odpowiedniej opcji!')
+
+}
+}
+console.log(pracownicy)
+
+
+// const samochody = {
+//     marka: 'Opel',
+//     model: 'Astra',
+//     wyswietl: function(){
+//         console.log(this.model+' '+this.marka)
+//     }
+// }
+
+// let auto = samochody.wyswietl.bind(samochody);
+
+// auto()
+
+// const liczby = [1,2,3,4,5,6]
+// const liczby2 = [8,9,...liczby]
+// console.log(liczby2)
 
 // function suma(a,b,c,d,e,f){
 //     return a+b+c+d+e+f
@@ -88,6 +167,7 @@ console.log(liczby2)
 //         rok: '2012',  
 //         cena: '90000',
 //         ilosc: '2',
+//         wyswietl: function() {return console.log(this.marka+''+this.model+''+this.cena)}
 //     },
 //     {
 //         marka: 'Toyota',
@@ -95,6 +175,7 @@ console.log(liczby2)
 //         rok: '2015',
 //         cena: '50000',
 //         ilosc: '5',
+//         wyswietl: function() {return console.log(this.marka+''+this.model+''+this.cena)}
 //     },
 //     {
 //         marka: 'Honda',
@@ -102,8 +183,29 @@ console.log(liczby2)
 //         rok: '2017',
 //         cena: '70000',
 //         ilosc: '6',
+//         wyswietl: function() {return console.log(this.marka+''+this.model+''+this.cena)}
 //     }
 // ]
+
+// function wyswietl(){
+//     console.log(this)
+// }
+
+// wyswietl.call(auta)
+
+// function newCar(marka, model, przebieg,){
+//     this.marka=marka;
+//     this.model=model;
+//     this.przebieg=przebieg;
+// }
+
+// function setPrice(cena){
+//     newCar.apply(this, ['polones', 'serenka', 10000]);
+//     this.cena = cena
+//     console.log('Szczegoly samochodu ', `${this.marka}`)
+// }
+
+// const nowyAuto = new setPrice(parseInt(prompt('Spierdalaj')))
 
 // const totalPriceCar = auta.reduce(function(prevousValue, curentValue) {
 //     return prevousValue + curentValue.ilosc*curentValue.cena
