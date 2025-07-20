@@ -4,11 +4,38 @@
     <meta charset="UTF-8"
     <meta http-equiv="X-UA-Compatible" content="IE=edge"
     <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="shortcut icon" href="#" type="image/x-icon">
+    <title>Document Object Model</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-     
+     <div id="container">
+
+          <form action="#">
+              <input type="text" value="imie" id="gracz1">
+              <input type="text" value="imie" id="gracz2">
+              <input type="submit" value="START" onclick="gramy()">
+          </form>
+
+
+
+          <form action="#">
+            <label for="imie"><input class="gracz" id="g1" type="button" value="Gracz1" onclick="urzytkownik('uzytk1')"></label>
+            <label for="imie"><input class="gracz" id="g2" type="button" value="Gracz2" onclick="urzytkownik('uzytk2')"></label>
+          </form>
+
+          <form action="#">
+              <div class="row">
+                   <button id="a">?</button><button id="b">?</button><button id="c">?</button>
+              </div>
+              <div class="row">
+                   <button id="d">?</button><button id="e">?</button><button id="f">?</button>
+              </div>
+              <div class="row">
+                   <button id="g">?</button><button id="h">?</button><button id="i">?</button>
+              </div>
+
+          </form>
+     </div>
     
     <script src="script.js"></script>
 </body>

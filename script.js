@@ -1,11 +1,92 @@
-let wybor;
-const pracownicy = new Array()
+function gramy(){
+    let gracz1 = document.getElementById('gracz1').value
+    let gracz2 = document.getElementById('gracz2').value
+    
+    let pole1 = document.getElementById('a')
+    let pole2 = document.getElementById('b')
+    let pole3 = document.getElementById('c')
+    let pole4 = document.getElementById('d')
+    let pole5 = document.getElementById('e')
+    let pole6 = document.getElementById('f')
+    let pole7 = document.getElementById('g')
+    let pole8 = document.getElementById('h')
+    let pole9 = document.getElementById('i')
 
-function Osoba(imie,nazwisko, numer){
-    this.imie = imie
-    this.nazwisko = nazwisko
-    this.numer = parseInt(numer)
+    let graczPrzycisk = document.querySelectorAll('.gracz')
+
+    graczPrzycisk[0].value = gracz1
+    graczPrzycisk[1].value = gracz2
+
+    document.getElementById('g1').onclick = () => {
+        pole1.onclick = () => {
+            pole1.innerText = 'X'
+        }
+        pole2.onclick = () => {
+            pole2.innerText = 'X'
+        }
+        pole3.onclick = () => {
+            pole3.innerText = 'X'
+        }
+        pole4.onclick = () => {
+            pole4.innerText = 'X'
+        }
+        pole5.onclick = () => {
+            pole5.innerText = 'X'
+        }
+        pole6.onclick = () => {
+            pole6.innerText = 'X'
+        }
+        pole7.onclick = () => {
+            pole7.innerText = 'X'
+        }
+        pole8.onclick = () => {
+            pole8.innerText = 'X'
+        }
+        pole9.onclick = () => {
+            pole9.innerText = 'X'
+        }
+    }
+
+    document.getElementById('g2').onclick = () => {
+        pole1.onclick = () => {
+            pole1.innerText = 'O'
+        }
+        pole2.onclick = () => {
+            pole2.innerText = 'O'
+        }
+        pole3.onclick = () => {
+            pole3.innerText = 'O'
+        }
+        pole4.onclick = () => {
+            pole4.innerText = 'O'
+        }
+        pole5.onclick = () => {
+            pole5.innerText = 'O'
+        }
+        pole6.onclick = () => {
+            pole6.innerText = 'O'
+        }
+        pole7.onclick = () => {
+            pole7.innerText = 'O'
+        }
+        pole8.onclick = () => {
+            pole8.innerText = 'O'
+        }
+        pole9.onclick = () => {
+            pole9.innerText = 'O'
+        }
+    }
 }
+
+
+// let wybor;
+// const pracownicy = new Array()
+
+// function Osoba(imie,nazwisko, numer){
+//     this.imie = imie
+//     this.nazwisko = nazwisko
+//     this.numer = parseInt(numer)
+// }
 
 // function tworzenie(imie,nazwisko){
 //     let osoba = new Osoba(imie,nazwisko)
@@ -17,52 +98,52 @@ function Osoba(imie,nazwisko, numer){
 // }
 
 
-const metody = {
-    tworzeniaPracownika: function(imie,nazwisko,numer){
-        console.log(this)
-        let osoba = new Osoba(imie,nazwisko,numer)
-        pracownicy.push(osoba)
-    },
-    wyswietlPracownika: function(){
-        document.write('Imię: ' ,this.imie,' nazwisko: ',this.nazwisko)
-    },
-    usuwaniePracownika: function(){
-        delete pracownicy[this.numer-1]
-    }
-}
+// const metody = {
+//     tworzeniaPracownika: function(imie,nazwisko,numer){
+//         console.log(this)
+//         let osoba = new Osoba(imie,nazwisko,numer)
+//         pracownicy.push(osoba)
+//     },
+//     wyswietlPracownika: function(){
+//         document.write('Imię: ' ,this.imie,' nazwisko: ',this.nazwisko)
+//     },
+//     usuwaniePracownika: function(){
+//         delete pracownicy[this.numer-1]
+//     }
+// }
 
-while(wybor!=0){
-    wybor = prompt('Podaj co chcesz zrobis. (1-tworzenie, 2-usuwanie, 3-wyswietlanie, 4-wyswietl pracownika 0-wyjscie)')
-    switch(wybor){
-    case '1':
-        let imie = prompt('podaj imie')
-        let nazwisko = prompt('podaj nazwisko')
-        let numer = prompt('Podaj numer pracownika')
-        let tworzenie = metody.tworzeniaPracownika.bind(pracownicy)
-        tworzenie(imie,nazwisko,numer)
-        break;
-    case '2':
-        let nrP = prompt('podaj nr indeksu pracownika do usuniecia')
-        metody.usuwaniePracownika.apply(pracownicy[nrP])
-        wybor=0
-        break;
-    case '3':    
-        pracownicy.forEach((e)=>{
-            console.log(e)
-        })
-        break;
-    case '4':
-        let nr = prompt('podaj numer indeksu pracosnika')
-        metody.wyswietlPracownika.call(pracownicy[nr])
-        wybor=0
-        break;
+// while(wybor!=0){
+//     wybor = prompt('Podaj co chcesz zrobis. (1-tworzenie, 2-usuwanie, 3-wyswietlanie, 4-wyswietl pracownika 0-wyjscie)')
+//     switch(wybor){
+//     case '1':
+//         let imie = prompt('podaj imie')
+//         let nazwisko = prompt('podaj nazwisko')
+//         let numer = prompt('Podaj numer pracownika')
+//         let tworzenie = metody.tworzeniaPracownika.bind(pracownicy)
+//         tworzenie(imie,nazwisko,numer)
+//         break;
+//     case '2':
+//         let nrP = prompt('podaj nr indeksu pracownika do usuniecia')
+//         metody.usuwaniePracownika.apply(pracownicy[nrP])
+//         wybor=0
+//         break;
+//     case '3':    
+//         pracownicy.forEach((e)=>{
+//             console.log(e)
+//         })
+//         break;
+//     case '4':
+//         let nr = prompt('podaj numer indeksu pracosnika')
+//         metody.wyswietlPracownika.call(pracownicy[nr])
+//         wybor=0
+//         break;
 
-    default:
-        document.write('nie wybrano odpowiedniej opcji!')
+//     default:
+//         document.write('nie wybrano odpowiedniej opcji!')
 
-}
-}
-console.log(pracownicy)
+// }
+// }
+// console.log(pracownicy)
 
 
 // const samochody = {
